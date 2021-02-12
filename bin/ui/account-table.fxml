@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="listBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="357.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <TableView fx:id="tbvUsers" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="colUsername" prefWidth="150.0" text="Username" />
+          <TableColumn fx:id="colGender" prefWidth="150.0" text="Gender" />
+          <TableColumn fx:id="colCareer" prefWidth="150.0" text="Career(s)" />
+            <TableColumn fx:id="colBrithday" prefWidth="150.0" text="Birthday" />
+            <TableColumn fx:id="colBrowser" prefWidth="150.0" text="Browser" />
+        </columns>
+      </TableView>
+   </center>
+   <top>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="31.0" prefWidth="750.0">
+               <children>
+                  <Label fx:id="labelUserName">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="image" fitHeight="63.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#returnLoginScene" text="Log out">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Label text="User account list">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
