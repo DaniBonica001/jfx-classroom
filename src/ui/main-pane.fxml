@@ -5,14 +5,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <Pane fx:id="mainPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Pane fx:id="mainPane" prefHeight="89.0" prefWidth="203.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="28.0" layoutY="57.0" mnemonicParsing="false" onAction="#showLoginForm" text="Start">
+            <Button layoutX="55.0" layoutY="46.0" mnemonicParsing="false" onAction="#showLoginForm" style="-fx-background-color: #2AB6F3;" text="Start" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="40.0" />
+                  <Font name="Arial Bold" size="25.0" />
                </font>
             </Button>
          </children>

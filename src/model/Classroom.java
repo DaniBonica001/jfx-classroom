@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Classroom {
 	
-	//Atributes
+	//Relation
 	private List<User> usersAccount;
 	
 	//Constructor
@@ -13,6 +13,7 @@ public class Classroom {
 		usersAccount = new ArrayList<User>();		
 	}
 	
+	//Method to find the  user
 	public boolean findUser(String username, String password) {
 		boolean openWindow=false;
 		boolean exit =false;
@@ -29,24 +30,18 @@ public class Classroom {
 		return openWindow;
 	}
 	
-	
-	
-	
-	
-	
-	public void addUser(String name,String password,String gender,String career, String birthday,String favoriteBrowser) {
+	//Method to add a new user to the List
+	public void addUser(String name,String password,String gender,ArrayList<Career> career, String birthday,String favoriteBrowser) {
 		boolean find = findUser(name,password);
 		if (find==false) {
 			usersAccount.add(new User(name,password,gender,career,birthday,favoriteBrowser));
 		}		
 	}
 	
-	
+	//Method to return the users list
 	public List<User> getUsersAccount(){
-		return usersAccount;
-		
+		return usersAccount;		
 	}
 
-	
-	
+		
 }

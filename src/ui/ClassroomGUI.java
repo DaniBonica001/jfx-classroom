@@ -3,6 +3,8 @@ package ui;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -29,14 +31,17 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import model.Career;
 import model.Classroom;
 import model.User;
 
 public class ClassroomGUI {
 	
-	//Atributes
+	
 	@FXML
-    private Pane mainPane;		
+    private Pane mainPane;	
+	
+	//Relations
 	private Classroom classroom;
 	
 	//Controller Login
@@ -165,8 +170,8 @@ public class ClassroomGUI {
     	FXMLLoader loginForm = new FXMLLoader (getClass().getResource("login.fxml"));
     	loginForm.setController(this);
     	Parent loginPane = loginForm.load();
-    	
     	mainPane.getChildren().setAll(loginPane);
+    	
     }    
     
     //Method to open account-table.fxml from login screen(Login in button)
@@ -188,11 +193,13 @@ public class ClassroomGUI {
         		Image profilePicture = new Image(file.toURI().toString());
             	
             	FXMLLoader accountTableForm = new FXMLLoader (getClass().getResource("account-table.fxml"));
-            	accountTableForm.setController(this);
+            	accountTableForm.setController(this);            	
             	Parent accountPane = accountTableForm.load();
-            	mainPane.getChildren().clear();
+            	mainPane.getChildren().clear(); 
             	mainPane.getChildren().setAll(accountPane);
-       			initializableTableView();
+            	mainPane.autosize();
+       			
+            	initializableTableView();
             	
             	labelUserName.setText(username); 
             	
@@ -299,7 +306,7 @@ public class ClassroomGUI {
     //Method to save user (create account button)
     @FXML
     public void saveUser(ActionEvent event) throws IOException{
-    	
+    	ArrayList<Career>userCareers = new ArrayList<Career>();
     	String name= txtRegisterUsername.getText();
     	String password = txtRegisterPassword.getText();    
     	String addressPhoto = txtAddresPhoto.getText();
@@ -316,31 +323,40 @@ public class ClassroomGUI {
 			gender="";
 		}
     	
-    	String career;
+    	String career="";
     	
     	if (cbSoftwareEng.isSelected()) {
-			career = cbSoftwareEng.getText();
-		}else if (cbTelematicEng.isSelected()) {
-			career = cbTelematicEng.getText();
-		}else if (cbIndustrialEng.isSelected()) {
-			career = cbIndustrialEng.getText();
-		}else {
-			career="";
+    		userCareers.add(Career.SOFTWARE_ENGINEERING);			
 		}
+    	if (cbTelematicEng.isSelected()) {
+			userCareers.add(Career.TELEMATIC_ENGINEERING);
+		}
+    	if (cbIndustrialEng.isSelected()) {
+			userCareers.add(Career.INDUSTRIAL_ENGINEERING);
+		}
+    	/*
+    	for (int i=0;i<userCareers.size();i++) {
+    		career+=userCareers.get(i).name()+",";
+    	} 
     	
+    	*/
     	LocalDate birthdayDate = birthdayPicker.getValue();    
     	
     	String favoriteBrowser = cbFavBrowser.getSelectionModel().getSelectedItem();	
     	
-    	if (name!="" && password!="" && addressPhoto!="" && gender!="" && career!="" && birthdayDate!=null && favoriteBrowser!="") {
+    	if (name!="" && password!="" && addressPhoto!="" && gender!="" && userCareers!=null && birthdayDate!=null && favoriteBrowser!="") {
     		   		
     		String birthday =  birthdayDate.toString();
     		System.out.println("name: "+name);
     		System.out.println("password: "+password);
     		System.out.println("gender: "+gender);
+    		
+    		for (int i=0;i<userCareers.size();i++) {
+    			career+=userCareers.get(i).name()+",";
+    		}
     		System.out.println("careers: "+career);    	
     		
-    		classroom.addUser(name,password,gender,career, birthday,favoriteBrowser);
+    		classroom.addUser(name,password,gender,userCareers, birthday,favoriteBrowser);
     		
     		alert = new Alert (AlertType.CONFIRMATION);
     		alert.setHeaderText("Congratulations!");

@@ -9,7 +9,7 @@ import model.Classroom;
 
 public class Main extends Application {
 	
-	//Atributes
+	//Relations
 	private Classroom classroom;
 	private ClassroomGUI classroomGUI;
 	
@@ -28,7 +28,7 @@ public class Main extends Application {
 		mainFxml.setController(classroomGUI);
 		Parent mainRoot = mainFxml.load();
 		
-		Scene scene = new Scene(mainRoot);
+		Scene scene = new Scene(mainRoot,200,140);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Classroom");
 		primaryStage.show();		
