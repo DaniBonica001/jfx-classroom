@@ -54,7 +54,6 @@ public class User {
 				career+=userCareers.get(i).name()+",";
 			}			
 		}		
-		System.out.println("+++++++++++++ "+career);
 		return career;
 	}
 	

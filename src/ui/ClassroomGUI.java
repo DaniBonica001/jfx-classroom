@@ -323,8 +323,7 @@ public class ClassroomGUI {
 			gender="";
 		}
     	
-    	String career="";
-    	
+    	    	
     	if (cbSoftwareEng.isSelected()) {
     		userCareers.add(Career.SOFTWARE_ENGINEERING);			
 		}
@@ -334,12 +333,7 @@ public class ClassroomGUI {
     	if (cbIndustrialEng.isSelected()) {
 			userCareers.add(Career.INDUSTRIAL_ENGINEERING);
 		}
-    	/*
-    	for (int i=0;i<userCareers.size();i++) {
-    		career+=userCareers.get(i).name()+",";
-    	} 
     	
-    	*/
     	LocalDate birthdayDate = birthdayPicker.getValue();    
     	
     	String favoriteBrowser = cbFavBrowser.getSelectionModel().getSelectedItem();	
@@ -347,15 +341,8 @@ public class ClassroomGUI {
     	if (name!="" && password!="" && addressPhoto!="" && gender!="" && userCareers!=null && birthdayDate!=null && favoriteBrowser!="") {
     		   		
     		String birthday =  birthdayDate.toString();
-    		System.out.println("name: "+name);
-    		System.out.println("password: "+password);
-    		System.out.println("gender: "+gender);
-    		
-    		for (int i=0;i<userCareers.size();i++) {
-    			career+=userCareers.get(i).name()+",";
-    		}
-    		System.out.println("careers: "+career);    	
-    		
+    		    		
+    		    		    		
     		classroom.addUser(name,password,gender,userCareers, birthday,favoriteBrowser);
     		
     		alert = new Alert (AlertType.CONFIRMATION);

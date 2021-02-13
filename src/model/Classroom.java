@@ -17,16 +17,13 @@ public class Classroom {
 	public boolean findUser(String username, String password) {
 		boolean openWindow=false;
 		boolean exit =false;
-		
-		System.out.println("************password: "+password);
-		
+						
 		for (int i=0;i<usersAccount.size() && !exit ;i++) {
 			if (username.equalsIgnoreCase(usersAccount.get(i).getUsername()) && password.equalsIgnoreCase(usersAccount.get(i).getPassword()) ) {
 				openWindow=true;
 				exit=true;				
 			}
 		}
-		System.out.println("************"+openWindow);
 		return openWindow;
 	}
 	
