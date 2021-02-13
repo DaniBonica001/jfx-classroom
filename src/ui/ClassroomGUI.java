@@ -169,7 +169,7 @@ public class ClassroomGUI {
     public void showLoginForm(ActionEvent event) throws IOException{
     	FXMLLoader loginForm = new FXMLLoader (getClass().getResource("login.fxml"));
     	loginForm.setController(this);
-    	Parent loginPane = loginForm.load();
+    	Parent loginPane = loginForm.load();    	
     	mainPane.getChildren().setAll(loginPane);
     	
     }    
@@ -267,7 +267,7 @@ public class ClassroomGUI {
     	
     	
     	//Items to the comboBox
-    	ObservableList<String> optionsComboBox = FXCollections.observableArrayList("Opera","Internet Explorer","Google Chrome","Microsoft Edge");
+    	ObservableList<String> optionsComboBox = FXCollections.observableArrayList("Opera","Internet Explorer","Google Chrome","Microsoft Edge","Firefox","Safari","Thor","Brave");
   	    cbFavBrowser.setItems(optionsComboBox);
     	   	   
     }

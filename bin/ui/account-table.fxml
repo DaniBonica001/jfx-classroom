@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="listBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="357.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="listBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <TableView fx:id="tbvUsers" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
@@ -24,7 +24,7 @@
       </TableView>
    </center>
    <top>
-      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" style="-fx-background-color: #2AB6F3;" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER_RIGHT" prefHeight="31.0" prefWidth="750.0">
                <children>
@@ -33,8 +33,8 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="image" fitHeight="63.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#returnLoginScene" text="Log out">
+                  <ImageView fx:id="imageProfilePicture" fitHeight="63.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#returnLoginScene" style="-fx-background-color: white;" text="Log out">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -44,12 +44,12 @@
                   </Button>
                </children>
             </HBox>
-            <Label text="User account list">
+            <Label text="User account list" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="10.0" />
                </VBox.margin>
             </Label>
          </children>

@@ -5,13 +5,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="288.0" prefWidth="467.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <GridPane prefHeight="211.0" prefWidth="462.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -34,22 +35,22 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="txtUserName" GridPane.columnIndex="1">
+            <TextField fx:id="txtUserName" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #2AB6F3; -fx-border-width: 0px 0px 2px 0px;" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin>
             </TextField>
-            <Button fx:id="btnSingUp" mnemonicParsing="false" onAction="#openRegisterForm" text="Sing up" GridPane.rowIndex="2">
+            <Button fx:id="btnSingUp" mnemonicParsing="false" onAction="#openRegisterForm" style="-fx-background-color: #2AB6F3;" text="Sing up" textFill="WHITE" GridPane.rowIndex="2">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#openAccountList" text="Log in" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#openAccountList" style="-fx-background-color: #2AB6F3;" text="Log in" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <PasswordField fx:id="passwordField" promptText="Paswword" style="-fx-background-color: transparent; -fx-border-color: #2AB6F3; -fx-border-width: 0px 0px 2px 0px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin>
@@ -57,20 +58,21 @@
          </children>
       </GridPane>
    </center>
-   <top>
-      <Label text="Sing in to Classroom" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="24.0" />
-         </font>
-         <BorderPane.margin>
-            <Insets top="20.0" />
-         </BorderPane.margin>
-      </Label>
-   </top>
    <bottom>
       <Label fx:id="labInfo" BorderPane.alignment="CENTER">
          <font>
             <Font size="14.0" />
          </font></Label>
    </bottom>
+   <top>
+      <AnchorPane prefHeight="97.0" prefWidth="467.0" style="-fx-background-color: #2AB6F3;" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <Label layoutX="110.0" layoutY="34.0" text="Sing in to Classroom" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
 </BorderPane>
