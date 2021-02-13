@@ -44,11 +44,7 @@ public class ClassroomGUI {
 	//Relations
 	private Classroom classroom;
 	
-	//Controller Login
-	//Controller Login
-	//Controller Login
-	//Controller Login
-	//Controller Login
+	//Atributes login.fxml
 
     @FXML
     private TextField txtUserName;
@@ -68,13 +64,7 @@ public class ClassroomGUI {
     
     private Alert alert;
 	
-    //Controller account-table
-    //Controller account-table
-    //Controller account-table
-    //Controller account-table
-    //Controller account-table
-    //Controller account-table
-    
+    //Atributes account-pane    
 
     @FXML
     private BorderPane listBorderPane;
@@ -107,11 +97,7 @@ public class ClassroomGUI {
     private Button btnLogOut;
 	    
 	    
-    //Conntroller Register
-    //Conntroller Register
-    //Conntroller Register
-    //Conntroller Register
-    //Conntroller Register
+    //Atributes register.fxml
     
     @FXML
     private CheckBox cbSoftwareEng;    
@@ -352,7 +338,7 @@ public class ClassroomGUI {
     		
     		txtRegisterUsername.setText("");
     		txtRegisterPassword.setText("");
-    		txtAddresPhoto.setText("");    		
+    		//txtAddresPhoto.setText("");    		
     		rbMale.setSelected(false);
     		rbFemale.setSelected(false);
     		rbOther.setSelected(false);
